@@ -143,8 +143,6 @@ def download_references(driver):
 def capture_elements(driver, client):
     page: Webpage
     for counter, page in enumerate(Webpage.find_all()):
-        if counter == 10: 
-            return
         if page.webelements is None or len(page.webelements) == 0:
             try:
                 captures = util.capture_elements(driver=driver, url=page.url)
@@ -164,8 +162,6 @@ def capture_elements(driver, client):
 def save_on_disc(download_path):
     page: Webpage
     for counter, page in enumerate(Webpage.find_all()):
-        if counter == 10: 
-            return
         try:
             path = os.path.join(download_path, str(page._id))
             # screenshots_path = os.path.join(path, "screenshots")
@@ -211,7 +207,7 @@ if __name__ == "__main__":
     parser.add_argument('--capture', action='store_true',
                         help="Signal to download webelements from webpages and store them in the database")
     #parser.add_argument('--zip_page', action='store_true')
-    parser.add_argument('--save_on_disc', action='store_false', 
+    parser.add_argument('--save_on_disc', action='store_true', 
                         help="Extract webpages and save them onto disc to display them locally")
     #parser.add_argument('--analyse', action='store_true')
     parser.add_argument('--database_server', type=str, nargs=1, 
