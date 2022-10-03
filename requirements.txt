@@ -1,0 +1,8 @@
+selenium
+wget
+requests
+argparse
+lxml
+pymongo
+pyautogui
+cv2
