@@ -5,4 +5,4 @@ argparse
 lxml
 pymongo
 pyautogui
-cv2
+opencv-python
